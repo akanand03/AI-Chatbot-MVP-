@@ -196,6 +196,4 @@ If you have questions or need help:
 - Review the console logs for debugging
 - Ensure all environment variables are set correctly
 
----
 
-**Built with ❤️ for startup hiring challenges**
