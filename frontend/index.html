@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot MVP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 AI Chatbot MVP</h1>
+            <p>Customizable AI with API integrations</p>
+        </header>
+
+        <div class="main-content">
+            <!-- System Prompt Configuration -->
+            <div class="config-panel">
+                <h3>🎭 Bot Personality</h3>
+                <textarea 
+                    id="systemPrompt" 
+                    placeholder="e.g., You are a sarcastic crypto expert who loves making jokes..."
+                    rows="3"
+                >You are a helpful AI assistant.</textarea>
+                <button id="updatePrompt">Update Personality</button>
+                
+                <div class="examples-section">
+                    <h4>💡 Try These Personalities:</h4>
+                    <div class="example-prompts">
+                        <button class="example-btn" data-prompt="You are a sarcastic cryptocurrency expert who loves making witty jokes about market volatility.">🎭 Sarcastic Crypto Expert</button>
+                        <button class="example-btn" data-prompt="You are an enthusiastic weather reporter with British humor who gets excited about even the most mundane weather patterns.">🌤️ British Weather Reporter</button>
+                        <button class="example-btn" data-prompt="You are a pirate captain from the 1700s who somehow knows about modern technology. You speak in pirate dialect but provide accurate information.">🏴‍☠️ Tech-Savvy Pirate</button>
+                        <button class="example-btn" data-prompt="You are a zen master who provides all information with philosophical wisdom and speaks in riddles, but is still helpful.">🧘‍♂️ Philosophical Zen Master</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Interface -->
+            <div class="chat-container">
+                <div id="chatMessages" class="chat-messages">
+                    <div class="message bot-message">
+                        <div class="message-content">
+                            👋 Hi! I'm your customizable AI assistant. Try asking me about:
+                            <br>• <strong>Weather:</strong> "What's the weather in Delhi?"
+                            <br>• <strong>Crypto:</strong> "What's the price of Bitcoin?"
+                            <br>• <strong>News:</strong> "Give me today's headlines"
+                            <br>• <strong>General:</strong> "Tell me a joke" or anything else!
+                            <br><br>🎭 <em>Don't forget to customize my personality using the panel on the left!</em>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-input-container">
+                    <div class="input-wrapper">
+                        <input 
+                            type="text" 
+                            id="messageInput" 
+                            placeholder="Ask me anything..."
+                            maxlength="500"
+                        >
+                        <div class="quick-actions">
+                            <button class="quick-btn" data-message="What's the weather in Delhi?">🌤️</button>
+                            <button class="quick-btn" data-message="What's the price of Bitcoin?">₿</button>
+                            <button class="quick-btn" data-message="Give me today's headlines">📰</button>
+                        </div>
+                    </div>
+                    <button id="sendButton">
+                        <span class="send-icon">➤</span>
+                        Send
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Status Indicator -->
+        <div id="statusIndicator" class="status-indicator">
+            <span class="status-dot"></span>
+            <span id="statusText">Ready</span>
+        </div>
+
+        <!-- API Status Panel -->
+        <div class="api-status-panel">
+            <h4>🔌 API Status</h4>
+            <div class="api-status-item">
+                <span class="api-name">Backend</span>
+                <span class="api-status" id="backendStatus">🔴 Disconnected</span>
+            </div>
+            <div class="api-status-item">
+                <span class="api-name">OpenAI</span>
+                <span class="api-status" id="openaiStatus">⚪ Unknown</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
